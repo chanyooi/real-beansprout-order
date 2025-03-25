@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>콩나물 주문</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📦 콩나물 주문</h1>
+
+    <!-- 오늘 날짜 표시 -->
+    <div class="date" id="today-date"></div>
+
+    <!-- 거래처명 입력 -->
+    <input type="text" id="name" placeholder="거래처 성함" />
+
+    <!-- 품목 입력 -->
+    <div class="item">
+      <label>일반 콩나물</label>
+      <input type="number" id="normal" value="0" min="0" />
+    </div>
+
+    <div class="item">
+      <label>두절 콩나물</label>
+      <input type="number" id="cut" value="0" min="0" />
+    </div>
+
+    <div class="item">
+      <label>곱슬 콩나물</label>
+      <input type="number" id="curly" value="0" min="0" />
+    </div>
+
+    <div class="item">
+      <label>숙주 콩나물</label>
+      <input type="number" id="sprout" value="0" min="0" />
+    </div>
+
+    <!-- 버튼 -->
+    <button onclick="submitOrder()">주문하기</button>
+    <button onclick="resetForm()" class="reset-btn">다시 작성</button>
+  </div>
+
+  <!-- 주문 완료 화면 -->
+  <div class="container" id="thank-you" style="display: none; text-align: center;">
+    <h2>✅ 주문이 완료되었습니다!</h2>
+    <p>감사합니다. 콩나물 금방 준비할게요 😄</p>
+  </div>
+  <!-- Firebase SDK 추가 (필수!!) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- 스크립트 연결 -->
+  <script src="firebase-config1.js"></script>
+  <script src="script1.js"></script>
+</body>
+</html>

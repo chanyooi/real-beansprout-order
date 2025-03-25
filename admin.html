@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 주문 후복</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📊 관리자 주문 통계</h1>
+    <div class="date" id="today-date"></div>
+
+    <table id="order-table">
+      <thead>
+        <tr>
+          <th>검색자</th>
+          <th>일반</th>
+          <th>두절</th>
+          <th>곡슬</th>
+          <th>술주</th>
+          <th>주문 시간</th>
+        </tr>
+      </thead>
+      <tbody id="order-body">
+        <!-- 주문 행이 자동 추가될 것 -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Firebase config & script -->
+  <script src="firebase-config1.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
