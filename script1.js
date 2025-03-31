@@ -10,18 +10,19 @@ window.onload = function () {
 // 주문 제출 함수
 function submitOrder() {
   const name = document.getElementById("name").value;
+  const region = document.getElementById("region").value;
   const normal = document.getElementById("normal").value;
   const cut = document.getElementById("cut").value;
   const curly = document.getElementById("curly").value;
   const sprout = document.getElementById("sprout").value;
   const time = new Date().toLocaleString('ko-KR');
 
-  if (!name) {
-    alert("거래처 이름을 입력해주세요.");
+  if (!name || !region) {
+    alert("거래처 이름과 지역을 입력해주세요.");
     return;
   }
 
-  const order = { name, normal, cut, curly, sprout, time };
+  const order = { name, region, normal, cut, curly, sprout, time };
 
   // Firebase Firestore에 저장
   db.collection("orders").add(order)
@@ -38,6 +39,7 @@ function submitOrder() {
 // 다시 작성 버튼
 function resetForm() {
   document.getElementById("name").value = "";
+  document.getElementById("region").value = "";
   document.getElementById("normal").value = 0;
   document.getElementById("cut").value = 0;
   document.getElementById("curly").value = 0;
